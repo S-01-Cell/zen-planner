@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+mongo-data/
+.DS_Store

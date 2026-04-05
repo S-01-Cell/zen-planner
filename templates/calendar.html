@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css' rel='stylesheet' />
+    <title>ZenPlanner | Calendar</title>
+</head>
+
+<body>
+    <div class="desktop-wrapper">
+        <aside class="sidebar">
+            <h1 class="brand-gold" onclick="location.href='/dashboard'">ZenPlanner</h1>
+            <nav>
+                <div class="nav-item" onclick="location.href='/dashboard'">🏠 Dashboard</div>
+                <div class="nav-item active" onclick="location.href='/calendar'">📅 Calendar</div>
+                <div class="nav-item" onclick="location.href='/analytics'">📊 Analytics</div>
+                <div class="nav-item" onclick="location.href='/logout'" style="margin-top: 20px; color: #ff4d4d;">🚪
+                    Logout</div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h2>Calendar View</h2>
+            </header>
+
+            <div id="calendar"
+                style="background: white; padding: 20px; border-radius: 16px; box-shadow: var(--shadow);"></div>
+
+            <div id="calendarTaskDetails"
+                style="display: none; margin-top: 30px; padding: 25px; background: white; border-radius: 16px; border-left: 10px solid var(--primary-gold); box-shadow: var(--shadow);">
+                <h3 id="detailTitle" style="margin: 0;">Select a task</h3>
+                <p id="detailDesc" style="color: #666; margin: 10px 0;"></p>
+                <div id="detailMeta" style="font-size: 0.9rem; color: #999;"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
+</body>
+
+</html>

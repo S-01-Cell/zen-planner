@@ -1,0 +1,6 @@
+flask
+pymongo
+flask-bcrypt
+flask-login
+python-dotenv
+gunicorn

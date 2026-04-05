@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>ZenPlanner | Login</title>
+</head>
+
+
+
+<body class="auth-page">
+    <div class="web-container auth-card">
+        <header>
+            <h1 class="brand-gold">ZenPlanner</h1>
+            <p>Welcome back! Please login.</p>
+        </header>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert-message"
+            style="color: #ff4d4d; background: rgba(255, 77, 77, 0.1); padding: 10px; border-radius: 5px; margin-bottom: 20px; text-align: center; font-size: 0.9rem; border: 1px solid #ff4d4d;">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="/login">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="youremail@gmail.com" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="••••••••" required>
+                <div style="text-align: right; margin-top: 5px;">
+                    <a href="{{ url_for('forgot_password') }}"
+                        style="font-size: 0.8rem; color: var(--primary-gold); text-decoration: none; opacity: 0.8;">Forgot
+                        password?</a>
+                </div>
+            </div>
+            <button type="submit" class="btn-primary">LOGIN</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>New here? <a href="/register" class="link-gold">Create Account</a></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+
+</html>

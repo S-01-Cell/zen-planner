@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>ZenPlanner | Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .zen-reflection {
+            background: linear-gradient(135deg, #ffffff 0%, #fff9e6 100%);
+            border: 1px solid rgba(255, 210, 0, 0.3);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="desktop-wrapper">
+        <aside class="sidebar">
+            <h1 class="brand-gold" onclick="location.href='/dashboard'">ZenPlanner</h1>
+            <nav>
+                <div class="nav-item" onclick="location.href='/dashboard'">🏠 Dashboard</div>
+                <div class="nav-item" onclick="location.href='/calendar'">📅 Calendar</div>
+                <div class="nav-item active" onclick="location.href='/analytics'">📊 Analytics</div>
+                <div class="nav-item" onclick="location.href='/logout'" style="margin-top: 20px; color: #ff4d4d;">🚪
+                    Logout</div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h2>Zen Insights</h2>
+                <p>Decoding the rhythm of your productivity.</p>
+            </header>
+
+            <div class="task-grid">
+                <div class="task-card stat-card" style="border-left: 6px solid #FFD200;">
+                    <h3 style="font-size: 0.8rem; color: #888; text-transform: uppercase;">Zen Focus Score</h3>
+                    <div id="focusScore"
+                        style="font-size: 3.5rem; font-weight: 900; color: var(--text-dark); margin: 10px 0;">0%</div>
+                    <div id="scoreLabel" style="font-size: 0.85rem; font-weight: 600;">Seeking Balance</div>
+                </div>
+
+                <div class="task-card stat-card">
+                    <h3 style="font-size: 0.8rem; color: #888; text-transform: uppercase;">Activity Overview</h3>
+                    <div style="margin-top: 15px;">
+                        <p style="display: flex; justify-content: space-between;">Total Tasks <span id="totalCount"
+                                style="font-weight: 800;">0</span></p>
+                        <p style="display: flex; justify-content: space-between;">Completed <span id="compCount"
+                                style="font-weight: 800; color: #2ecc71;">0</span></p>
+                        <p style="display: flex; justify-content: space-between;">Pending <span id="pendingCount"
+                                style="font-weight: 800; color: #FFD200;">0</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-grid" style="margin-top: 30px;">
+                <div class="task-card" style="grid-column: span 2;">
+                    <h3>Productivity Flow</h3>
+                    <canvas id="productivityChart" height="100"></canvas>
+                </div>
+
+                <div class="task-card">
+                    <h3>Category Balance</h3>
+                    <div style="height: 200px; display: flex; justify-content: center;">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zen-reflection">
+                <h3 style="color: var(--primary-gold); margin-bottom: 10px;">✨ Personalized Reflection</h3>
+                <p id="zenQuote" style="font-style: italic; font-size: 1.1rem; color: #555;">Gathering your insights...
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+</body>
+
+</html>
