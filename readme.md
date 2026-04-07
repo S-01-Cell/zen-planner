@@ -13,12 +13,14 @@ Open your terminal and run:
 ```bash
 git clone [https://github.com/YOUR_GITHUB_USERNAME/ZenPlanner.git](https://github.com/YOUR_GITHUB_USERNAME/ZenPlanner.git)
 cd "Planner App"
+```
 
 ### 2. Launch the Application
 This command builds the Python environment and pulls the MongoDB image:
 
 ```bash
 docker-compose up --build -d
+```
 
 ### 3. Access the App
 Once the containers are running, visit:
@@ -55,6 +57,7 @@ Frontend: HTML5, CSS3 (Zen Gold-and-Slate Theme), JavaScript
 ├── templates/          # Jinja2 HTML templates (Auth, Dashboard, Reset)
 ├── static/             # Custom CSS and UI assets
 └── .gitignore          # Prevents pushing sensitive data (mongo-data/ and .venv/)
+```
 
 ## 🛠️ Management Commands
 
@@ -75,6 +78,7 @@ To inspect the lifestyle data visually, follow these steps:
 2. **Connect:** Create a new connection in Compass using the following URI:
    ```text
    mongodb://localhost:27017
+   ```
 
 ### Option 2: Using Docker Terminal (No Compass required)
 
@@ -84,14 +88,17 @@ If you do not have MongoDB Compass installed, your data is still securely stored
    Run this command to enter the MongoDB container:
    ```bash
    docker exec -it plannerapp-mongodb-1 mongosh
+   ```
 
 2. **Select the Project Database:**
    Once inside the shell, switch to the ZenPlanner database:
    ```javascript
    use planner_db
+   ```
 
 3. **View and Verify Data:**
    To see all stored tasks and their assigned categories (Work, Personal, Health, Finance), run:
    ```javascript
    db.tasks.find().pretty()
+   ```
 
