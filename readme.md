@@ -1,4 +1,4 @@
-# 🌿 ZenPlanner: Personal Productivity & Lifestyle
+# 🌿 ZenPlanner: Productivity & Lifestyle
 
 **ZenPlanner** is a minimalist, high-performance productivity ecosystem designed for holistic life management. Built with a Flask backend and MongoDB, it allows users to categorize and optimize their daily routines across four essential pillars: **Work, Personal, Health, and Finance.**
 
