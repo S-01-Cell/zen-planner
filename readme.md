@@ -49,7 +49,7 @@ DevOps: Docker & Docker Compose
 
 Frontend: HTML5, CSS3 (Zen Gold-and-Slate Theme), JavaScript
 
-### 📂 Project Structure
+## 📂 Project Structure
 
 ```plaintext
 ├── app.py              # Flask server logic and Lifestyle API routes
